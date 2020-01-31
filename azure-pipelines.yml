@@ -15,6 +15,13 @@ steps:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(543942dd-ea77-4c5d-a96f-527980d61fe8)'
+    appType: 'webAppLinux'
+    appName: 'main-web-server'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'JAVA|8-jre8'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
